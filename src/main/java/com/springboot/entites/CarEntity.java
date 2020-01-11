@@ -1,5 +1,6 @@
 package com.springboot.entites;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,7 +27,7 @@ public class CarEntity {
 	@Column(name = "year")
 	private long year;
 
-	@OneToOne(mappedBy = "car", fetch = FetchType.EAGER)
+	@OneToOne(mappedBy = "car", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	private DriverEntity driver;
 
 	public Integer getId() {
